@@ -1,0 +1,31 @@
+notes on c (with gcc):
+
+$ sudo port select --list gcc
+sudo port select --set gcc mp-gcc47
+
+
+
+
+the -Wall enables all warnings, the "-o foo" sets the output file name
+	gcc -Wall foo.c -o foo
+	./foo
+
+
+
+
+
+CC = gcc
+FILES = t02.c
+OUT_EXE = Quebec
+
+all:
+    build
+    
+build: $(FILES)
+    $(CC) $(FILES) -o $(OUT_EXE)
+
+clean:
+    rm -f *.o core
+
+rebuild: 
+    clean build

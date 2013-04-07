@@ -1,0 +1,11 @@
+CC = gcc
+FILES = t02.c
+OUT_EXE = Quebec
+
+build: $(FILES)
+        $(CC) -o $(OUT_EXE) $(FILES)
+
+clean:
+        rm -f *.o core
+
+rebuild: clean build
